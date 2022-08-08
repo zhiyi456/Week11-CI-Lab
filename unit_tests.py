@@ -39,22 +39,6 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(self.a1.interest(interest_computer_mock),
                          self.a1.balance * 0.02)
         
-    #def test_deposit(self):
-    #    account = BankAccount(1000, "Phris")
-    #    bal = account.balance
-    #    self.assertEqual(bal, 1000)
-    #    self.assertEqual(account.name, "Phris")
-    #    account.deposit(500)
-    #    self.assertEqual(account.balance, 1500)
-
-    #def test_withdrawal(self):
-    #    account = BankAccount(1500, "Hyacinth")
-    #    bal = account.balance
-    #    self.assertEqual(bal, 1500)
-    #    account.withdraw(1000)
-    #    self.assertEqual(account.balance, 500)
-    #    self.assertRaises(Exception, account.withdraw, 600)
-
 
 if __name__ == "__main__":
     unittest.main()
