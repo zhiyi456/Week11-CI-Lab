@@ -30,8 +30,8 @@ class BankAccount:
             # dd/mm/YY H:M:S
             dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
             print("Transaction:", amount, "-", dt_string)
-        else:
-            raise Exception ("Insufficient balance!")
+
+        #TODO: Write code to handle the insufficient balance case here
 
     def interest(self, rate_computer):
         return rate_computer.get_rate() * self.balance
