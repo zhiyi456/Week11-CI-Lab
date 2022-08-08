@@ -29,6 +29,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+
       - name: Install dependencies
         #The run keyword tells the job to execute a command on the runner.
         #installs pip and flake 8 also if requirements.txt is present then installs all the dependencies specified there
@@ -36,8 +37,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
+
       - name: Lint with flake8
         #runs flake8 over the code
         run: |
@@ -45,8 +48,7 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-  test:
-    steps:
+
       - name: Test with unittest
         #runs the unittest
         run: |
